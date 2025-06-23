@@ -2,10 +2,9 @@ require('dotenv').config();
 const { spawn } = require('child_process');
 
 const scripts = [
-  { name: 'Burn Energy', path: 'burn.js', alwaysRun: true },
+  { name: 'Burn Energy', path: 'burn-energy.js', alwaysRun: true },
   { name: 'Maps Event', path: 'maps.js', envKey: 'LP_MAPS_URL' },
-  { name: 'Slots Event', path: 'slots.js', envKey: 'LP_SLOTS_URL' },
-  { name: 'Memory Event', path: 'memory.js', envKey: 'LP_MEMORY_URL' },
+  { name: 'Slots Event', path: 'Slots.js', envKey: 'LP_SLOTS_URL' },
 ];
 
 (async () => {
