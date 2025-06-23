@@ -5,6 +5,7 @@ const scripts = [
   { name: 'Burn Energy', path: 'burn-energy.js', alwaysRun: true },
   { name: 'Maps Event', path: 'maps.js', envKey: 'LP_MAPS_URL' },
   { name: 'Slots Event', path: 'Slots.js', envKey: 'LP_SLOTS_URL' },
+  { name: 'Memory Event', path: 'memory.js', envKey: 'LP_MEMORY_URL' },
 ];
 
 (async () => {
