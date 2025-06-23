@@ -1,0 +1,47 @@
+name: Run mspc.js
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run-mspc:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: ⬇️ Checkout repository
+        uses: actions/checkout@v3
+
+      - name: ⚙️ Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'
+
+      - name: 📦 Install dependencies
+        run: npm install
+
+      - name: 🌐 Install Playwright browsers
+        run: npx playwright install --with-deps
+
+      - name: 🚀 Run mspc.js script
+        run: node mspc.js
+        env:
+          LP_EMAIL: ${{ secrets.LP_EMAIL }}
+          LP_PASSWORD: ${{ secrets.LP_PASSWORD }}
+          LP_MAPS_URL: ${{ secrets.LP_MAPS_URL }}
+          LP_SLOTS_URL: ${{ secrets.LP_SLOTS_URL }}
+          LP_MEMORY_URL: ${{ secrets.LP_MEMORY_URL }}
+
+      - name: 🖼️ Upload error screenshots if failed
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: error-screenshots
+          path: |
+            login-error-*.png
+            cookie-error.png
+            maps-error.png
+            slots-error.png
+            burn-error.png
+            bp-fallback-error.png
+            bp-error-*.png
