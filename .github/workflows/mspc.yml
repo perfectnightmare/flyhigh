@@ -28,6 +28,7 @@ jobs:
         env:
           LP_EMAIL: ${{ secrets.LP_EMAIL }}
           LP_PASSWORD: ${{ secrets.LP_PASSWORD }}
+          LP_TELEPORT_URL: ${{ secrets.LP_TELEPORT_URL }}
           LP_MAPS_URL: ${{ secrets.LP_MAPS_URL }}
           LP_SLOTS_URL: ${{ secrets.LP_SLOTS_URL }}
           LP_MEMORY_URL: ${{ secrets.LP_MEMORY_URL }}
