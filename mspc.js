@@ -3,6 +3,7 @@ const { spawn } = require('child_process');
 
 const scripts = [
   { name: 'Burn Energy', path: 'burn-energy.js', alwaysRun: true },
+  { name: 'Tele Event', path: 'tele.js', envKey: 'LP_TELEPORT_URL' },
   { name: 'Maps Event', path: 'maps.js', envKey: 'LP_MAPS_URL' },
   { name: 'Slots Event', path: 'Slots.js', envKey: 'LP_SLOTS_URL' },
   { name: 'Memory Event', path: 'memory.js', envKey: 'LP_MEMORY_URL' },
