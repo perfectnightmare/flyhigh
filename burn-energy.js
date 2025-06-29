@@ -170,7 +170,7 @@ module.exports = async function runBurnEnergy(page) {
   let tickets = await getTicketCount();
   console.log(`🎟️ You have ${tickets} tickets.`);
 
-  let ticketsToUse = tickets - 97;
+  let ticketsToUse = tickets - 90;
 
   if (ticketsToUse > 0) {
     console.log(`🎯 Using ${ticketsToUse} ticket(s)...`);
@@ -198,6 +198,6 @@ module.exports = async function runBurnEnergy(page) {
 
     console.log("✅ Finished using excess tickets.");
   } else {
-    console.log(`🚫 Tickets are ${tickets}. Not more than 97. Skipping.`);
+    console.log(`🚫 Tickets are ${tickets}. Not more than 90. Skipping.`);
   }
 };
